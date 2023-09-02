@@ -17,7 +17,7 @@ go build -o bin/example-api
 ### Container (Recommended)
 
 ```bash
-docker build -t example-api
+docker build -t example-api .
 
 ```
 
