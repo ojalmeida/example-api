@@ -5,10 +5,12 @@ WORKDIR /tmp/build
 
 ADD . .
 
-RUN go get -u ./...
 RUN go install github.com/swaggo/swag/cmd/swag
 RUN go install github.com/pquerna/ffjson
+RUN go mod tidy
 RUN go generate ./...
+
+RUN go get -u ./...
 RUN go build -o bin/example-api
 
 FROM alpine:latest
