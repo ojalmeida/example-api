@@ -26,3 +26,4 @@ go.work
 # Generated code
 docs
 *_ffjson.go
+bin/*

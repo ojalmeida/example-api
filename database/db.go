@@ -55,6 +55,8 @@ func UpdateClient(id string, desired models.Client) (updatedClient models.Client
 		return
 	}
 
+	desired.Id = id
+
 	clients[idx] = desired
 	updatedClient = clients[idx]
 
@@ -75,7 +77,7 @@ func DeleteClient(id string) (err error) {
 		return
 	}
 
-	clients = append(clients[idx:], clients[:idx+1]...)
+	clients = append(clients[:idx], clients[idx+1:]...)
 
 	return
 }
